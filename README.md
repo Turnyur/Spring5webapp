@@ -1,5 +1,2 @@
 # Spring5webapp
-A Spring Boot web application
-
-Language: Java
-Framework: Spring Boot
+A Simple Spring Boot web application

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link type="stylesheet/css" rel="stylesheet" 
-              href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
 <!--        <link type="stylesheet/css" rel="stylesheet" href="./assets/css/books.css">-->
     </head>
     <body>
@@ -16,17 +16,17 @@
 	
 	<thead>
       <tr>
-        <th>&nbsp;</th>
+        <th>S/N</th>
         <th>Wiedget</th>
         <th>Wingding</th>
        
       </tr>
   </thead>
   <tbody>
-      <tr th:each="book:${books}">
-          <td>&nbsp;</td>
-        <td th:text="${book.title}">Test</td>
-        <td th:text="${book.isbn}">data</td>
+      <tr th:each="author:${authors}">
+          <td th:text="${author.id}">1</td>
+        <td th:text="${author.firstName}">Test</td>
+        <td th:text="${author.lastName}">data</td>
       
       </tr>
 

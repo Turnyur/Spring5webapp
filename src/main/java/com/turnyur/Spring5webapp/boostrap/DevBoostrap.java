@@ -93,13 +93,13 @@ public class DevBoostrap implements ApplicationListener<ContextRefreshedEvent>{
         authorRepository.save(author2);
         
         book1.setAuthors(book1AuthorList);
-       //book3.setAuthors(book3AuthorList);
+       book3.setAuthors(book3AuthorList);
         
         
         //Commit Books to DB
         bookRepository.save(book1);
-       // bookRepository.save(book2);
-       // bookRepository.save(book3);
+        bookRepository.save(book2);
+        bookRepository.save(book3);
    }
     
 }
