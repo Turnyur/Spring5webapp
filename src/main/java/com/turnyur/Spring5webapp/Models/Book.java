@@ -16,6 +16,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import org.hibernate.annotations.GeneratorType;
 
 /**
@@ -27,7 +28,8 @@ import org.hibernate.annotations.GeneratorType;
 public class Book implements Serializable {
     private String title;
     private String isbn;
-    private String publisher;
+    @OneToOne
+    private Publisher publisher;
     @ManyToMany
     @JoinTable(name = "author_book", joinColumns=@JoinColumn(name = "book_id"),
      inverseJoinColumns= @JoinColumn(name = "author_id"))
@@ -41,16 +43,17 @@ public class Book implements Serializable {
         
     }
     
-    public Book(String title, String isbn, String publisher) {
+    public Book(String title, String isbn, Publisher publisher) {
         this.title = title;
         this.isbn = isbn;
         this.publisher = publisher;
     }
 
-    public Book(String title, String isbn, String publisher, Set<Author> authors) {
+    public Book(String title, String isbn, Publisher publisher, Set<Author> authors) {
         this.title = title;
         this.isbn = isbn;
         this.publisher = publisher;
+        this.authors=authors;
     }
     
     public String getTitle() {
@@ -69,11 +72,11 @@ public class Book implements Serializable {
         this.isbn = isbn;
     }
 
-    public String getPublisher() {
+    public Publisher getPublisher() {
         return publisher;
     }
 
-    public void setPublisher(String publisher) {
+    public void setPublisher(Publisher publisher) {
         this.publisher = publisher;
     }
 

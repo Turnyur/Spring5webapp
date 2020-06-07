@@ -21,7 +21,7 @@ import javax.persistence.ManyToMany;
  */
 
 @Entity
-class Author implements Serializable {
+public class Author implements Serializable {
     private String firstName;
     private String lastName;
     @ManyToMany(mappedBy = "authors")
@@ -42,6 +42,7 @@ class Author implements Serializable {
     public Author(String firstName, String lastName, Set<Book> books) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.books = books;
     } 
     
     
